@@ -11,6 +11,10 @@ const config = {
     db_password: process.env.DB_PWD,
     db_debug: process.env.DB_DEBUG,
   },
+  jwt: {
+    jwt_secret: process.env.JWT_SECRET,
+    jwt_expire: process.env.JWT_EXPIRE,
+  },
 };
 
 export default config;

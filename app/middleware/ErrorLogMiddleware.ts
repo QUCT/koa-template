@@ -10,10 +10,10 @@ const ErrorLoggingMiddleware = async (ctx: Context, next: Next) => {
     errorLogger.error(`Error occurred: ${err.message}`);
 
     // 设置响应状态码和消息
-    ctx.status = err.statusCode || err.status || 500;
-    ctx.body = { message: err.message || "Internal Server Error" };
+    ctx.message = err.message;
+    ctx.body = null;
 
-    // 不要“吞掉”错误，而是继续抛出
+    // 不要“吞掉”错误，而是继续抛出 让resonse中间件去格式化代码
     ctx.app.emit("error", err, ctx);
   }
 };
