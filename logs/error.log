@@ -1,31 +1,7 @@
-[2023-12-09T00:28:50.467] [ERROR] error - Error occurred: Table 'koa_transformer.users' doesn't exist
-[2023-12-09T00:33:00.024] [ERROR] error - Error occurred: Table 'koa_transformer.users' doesn't exist
-[2023-12-09T00:33:02.576] [ERROR] error - Error occurred: Table 'koa_transformer.users' doesn't exist
-[2023-12-09T00:42:37.642] [ERROR] error - Error occurred: Table 'koa_transformer.users' doesn't exist
-[2023-12-09T00:42:40.790] [ERROR] error - Error occurred: Table 'koa_transformer.users' doesn't exist
-[2023-12-09T00:52:37.188] [ERROR] error - Error occurred: Unknown column 'type' in 'field list'
-[2023-12-09T00:56:52.781] [ERROR] error - Error occurred: Unknown column 'type' in 'field list'
-[2023-12-09T20:04:29.310] [ERROR] error - Error occurred: notNull Violation: User.user_namme cannot be null,
-notNull Violation: User.membership_type cannot be null
-[2023-12-09T20:05:15.987] [ERROR] error - Error occurred: notNull Violation: User.user_namme cannot be null,
-notNull Violation: User.membership_type cannot be null
-[2023-12-09T20:05:51.912] [ERROR] error - Error occurred: notNull Violation: User.user_namme cannot be null,
-notNull Violation: User.membership_type cannot be null
-[2023-12-09T20:06:54.248] [ERROR] error - Error occurred: notNull Violation: User.membership_type cannot be null
-[2023-12-09T21:29:16.914] [ERROR] error - Error occurred: payload is required
-[2023-12-09T21:30:35.512] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:33:33.427] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:35:42.470] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:35:47.403] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:37:07.346] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:37:25.395] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:38:01.644] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:38:37.704] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T21:39:09.290] [ERROR] error - Error occurred: invalid expiresIn option for string payload
-[2023-12-09T22:13:46.820] [ERROR] error - Error occurred: 鉴权失败
-[2023-12-09T22:14:16.373] [ERROR] error - Error occurred: 鉴权失败
-[2023-12-09T22:16:17.577] [ERROR] error - Error occurred: 无效权限
-[2023-12-09T22:17:38.368] [ERROR] error - Error occurred: 无效权限
-[2023-12-09T22:17:40.072] [ERROR] error - Error occurred: 无效权限
-[2023-12-09T22:17:50.281] [ERROR] error - Error occurred: 无效权限
-[2023-12-09T22:18:00.040] [ERROR] error - Error occurred: 无效权限1
+[2023-12-11T00:08:32.732] [ERROR] error - Error occurred: Not found
+[2023-12-11T00:13:50.030] [ERROR] error - Error occurred: Not found
+[2023-12-11T00:19:41.440] [ERROR] error - Error occurred: Not found
+[2023-12-11T00:20:09.366] [ERROR] error - Error occurred: 500 的异常
+[2023-12-11T00:24:37.365] [ERROR] error - Error occurred: 500 的异常
+[2023-12-11T00:25:45.933] [ERROR] error - Error occurred: 500 的异常
+[2023-12-11T00:26:20.421] [ERROR] error - Error occurred: 500 的异常

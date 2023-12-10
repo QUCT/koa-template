@@ -1,6 +1,8 @@
 import { Context } from "koa";
 import UserService from "../service/UserService";
 import { sign } from "../../utils/auth";
+import { Rules } from "async-validator";
+import validate from "../../utils/validate";
 
 class UserController {
   async signin(ctx: Context) {
@@ -20,8 +22,25 @@ class UserController {
   }
 
   async test(ctx: Context) {
-    ctx.body = [11111111];
-    ctx.message = "gogogogog";
+    const rules: Rules = {
+      name: [
+        {
+          type: "string",
+          required: true,
+          message: "用户名不能为空",
+        },
+      ],
+    };
+    interface Iadmin {
+      name: string;
+      password: string;
+    }
+    const { data, error } = await validate<Iadmin>(ctx, rules);
+    if (error !== null) {
+      ctx.body = error;
+      ctx.businessCode = 400;
+    }
+    // return (ctx.message = "成功");
   }
 }
 

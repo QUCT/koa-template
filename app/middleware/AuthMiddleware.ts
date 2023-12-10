@@ -25,7 +25,6 @@ const AuthMiddleware = async (ctx: Context, next: Next) => {
       ctx.status = 403;
       return;
     }
-    await next();
   } catch (e) {
     ctx.body = {
       message: "鉴权异常",
@@ -35,6 +34,7 @@ const AuthMiddleware = async (ctx: Context, next: Next) => {
     ctx.status = 403;
     return;
   }
+  await next();
 };
 
 export default AuthMiddleware;

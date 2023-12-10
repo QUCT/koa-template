@@ -11,7 +11,8 @@ const ErrorLoggingMiddleware = async (ctx: Context, next: Next) => {
 
     // 设置响应状态码和消息
     ctx.message = err.message;
-    ctx.body = null;
+    ctx.body = {};
+    ctx.status = err?.status
 
     // 不要“吞掉”错误，而是继续抛出 让resonse中间件去格式化代码
     ctx.app.emit("error", err, ctx);
