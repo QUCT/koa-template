@@ -11,7 +11,7 @@ configure({
         type: "pattern",
         pattern: "[%d] [%p] %c - %m",
       },
-      numBackups: 7,
+      numBackups: 3,
     },
     access: {
       type: "dateFile",
@@ -21,7 +21,7 @@ configure({
         type: "pattern",
         pattern: "[%d] [%p] %c - %m",
       },
-      numBackups: 7,
+      numBackups: 3,
     },
     error: {
       type: "dateFile",
@@ -31,7 +31,7 @@ configure({
         type: "pattern",
         pattern: "[%d] [%p] %c - %m",
       },
-      numBackups: 7,
+      numBackups: 3,
     },
   },
   categories: {

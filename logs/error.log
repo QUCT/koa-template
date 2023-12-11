@@ -5,3 +5,8 @@
 [2023-12-11T00:24:37.365] [ERROR] error - Error occurred: 500 的异常
 [2023-12-11T00:25:45.933] [ERROR] error - Error occurred: 500 的异常
 [2023-12-11T00:26:20.421] [ERROR] error - Error occurred: 500 的异常
+[2023-12-11T21:50:06.263] [ERROR] error - Error occurred: Cannot read property 'body' of undefined
+[2023-12-11T21:50:52.937] [ERROR] error - Error occurred: Cannot read property 'body' of undefined
+[2023-12-11T21:50:57.002] [ERROR] error - Error occurred: Cannot read property 'body' of undefined
+[2023-12-11T21:51:18.988] [ERROR] error - Error occurred: Cannot read property 'body' of undefined
+[2023-12-11T21:51:19.819] [ERROR] error - Error occurred: Cannot read property 'body' of undefined

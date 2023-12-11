@@ -10,14 +10,14 @@ const ResponseMiddleware = async (ctx: Context, next: Next) => {
           success: false,
           data: ctx.body,
           code: ctx.businessCode,
-          message: ctx.message || "请求异常",
+          msg: ctx.msg || "请求异常",
         });
       } else {
         return (ctx.body = {
           success: true,
           data: ctx.body,
           code: ctx.businessCode,
-          message: ctx.message || "请求成功",
+          msg: ctx.msg || "请求成功",
         });
       }
     } else {
@@ -25,7 +25,7 @@ const ResponseMiddleware = async (ctx: Context, next: Next) => {
         success: true,
         data: ctx.body,
         code: ctx.status,
-        message: ctx.message,
+        msg: ctx.msg,
       });
     }
   } catch (err: any) {
@@ -34,7 +34,7 @@ const ResponseMiddleware = async (ctx: Context, next: Next) => {
       success: false,
       code: 500,
       data: null,
-      message: err.message || ctx.message || "服务异常",
+      msg: err.message || ctx.message || "服务异常",
     };
   }
 };

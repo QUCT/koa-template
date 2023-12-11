@@ -30,17 +30,31 @@ class UserController {
           message: "用户名不能为空",
         },
       ],
+      password: [
+        {
+          type: "string",
+          required: true,
+          message: "密码不能为空",
+        },
+      ],
     };
     interface Iadmin {
       name: string;
       password: string;
     }
     const { data, error } = await validate<Iadmin>(ctx, rules);
+    console.log("error", error);
     if (error !== null) {
-      ctx.body = error;
       ctx.businessCode = 400;
+      ctx.msg = "校验异常"
+      ctx.body = error;
+      return
     }
-    // return (ctx.message = "成功");
+    ctx.body = data;
+    ctx.businessCode = 200;
+    ctx.msg = "校验通过"
+    return;
+
   }
 }
 
