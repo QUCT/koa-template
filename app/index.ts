@@ -13,6 +13,7 @@ import path from "path";
 
 db(); // 初始化数据库
 const app = new Koa();
+app.use(ErrorLoggingMiddleware);
 app.use(ResponseMiddleware);
 app.use(
   koaBody({
@@ -27,7 +28,7 @@ app.use(
     text: true, // 解析文本请求体
   })
 );
-app.use(ErrorLoggingMiddleware);
+
 app.use(AccessLogMiddleWare);
 app.use(index.routes());
 app.use(user.routes());

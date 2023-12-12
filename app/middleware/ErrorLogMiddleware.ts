@@ -5,10 +5,14 @@ import { errorLogger } from "../logger";
 const ErrorLoggingMiddleware = async (ctx: Context, next: Next) => {
   try {
     await next(); // 尝试执行后续中间件
+    const logStr = `path:${ctx.path} | method:${ctx.method} | ua:${ctx.headers["user-agent"]}|`;
+    if(ctx.businessCode!==200){
+      // 记录错误信息
+      printErrorLog(ctx)
+    }
   } catch (err: any) {
     // 记录错误信息
-    errorLogger.error(`Error occurred: ${err.message}`);
-
+    printErrorLog(ctx,err)
     // 设置响应状态码和消息
     ctx.message = err.message;
     ctx.body = {};
@@ -18,5 +22,13 @@ const ErrorLoggingMiddleware = async (ctx: Context, next: Next) => {
     ctx.app.emit("error", err, ctx);
   }
 };
+
+const printErrorLog = (ctx:Context,err?:any)=>{
+  const logStr = `path:${ctx.path} | method:${ctx.method} | ua:${ctx.headers["user-agent"]}|`;
+  if(err){
+    return errorLogger.error(`Error occurred:${logStr} ${ err.message}`);
+  }
+  errorLogger.error(`Error occurred:${logStr} ${ctx.msg || ctx.message}`);
+}
 
 export default ErrorLoggingMiddleware;

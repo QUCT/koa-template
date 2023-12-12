@@ -10,6 +10,6 @@ router.post("/login", UserController.login);
 
 router.get("/logout");
 
-router.post("/test", UserController.test);
+router.post("/test",AuthMiddleware, UserController.test);
 
 export default router;

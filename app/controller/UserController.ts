@@ -14,6 +14,11 @@ class UserController {
     const { userName, password } = ctx.request.body;
     const user: any = await UserService.login({ userName, password });
     // 遗漏逻辑 判断用户是否有效且存在，不存在的话返回400和错误信息
+    if(user?.length <=0){
+      ctx.body = {};
+      ctx.businessCode = 400;
+      ctx.msg = "未查询到当前用户"
+    }
     ctx.body = {
       token: sign({
         user_id: user[0]["user_id"],
@@ -45,9 +50,13 @@ class UserController {
     const { data, error } = await validate<Iadmin>(ctx, rules);
     console.log("error", error);
     if (error !== null) {
+      let detailError =error
+     if(Object.prototype.toString.call(error).includes('Error')){ // 解析校验异常直接抛出
+       detailError = error.toString()
+     }
       ctx.businessCode = 400;
       ctx.msg = "校验异常"
-      ctx.body = error;
+      ctx.body = detailError;
       return
     }
     ctx.body = data;
